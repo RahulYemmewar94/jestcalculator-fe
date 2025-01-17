@@ -21,14 +21,12 @@ describe("Calculator Test Cases", () => {
         
         fireEvent.click(screen.getByText("2"));
         fireEvent.click(screen.getByText("1"));
-        fireEvent.click(screen.getByText("2"));
         fireEvent.click(screen.getByText("-"));
         fireEvent.click(screen.getByText("2"));
-        fireEvent.click(screen.getByText("1"));
         fireEvent.click(screen.getByText("0"));
         fireEvent.click(screen.getByText("="));
         
         const result = await screen.findByTestId("result"); 
-        expect(result).toHaveTextContent("10"); 
+        expect(result).toHaveTextContent("1"); 
       });
   });

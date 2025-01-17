@@ -15,11 +15,11 @@ const CalculatorWithJestTestCases = () => {
   } else if (value === "C") {
     setInputValue(""); 
   } else {
-    if (inputValue === "Enter the number" && !["+"].includes(value)) {
+    if (inputValue === "Enter the number" && !["+","-"].includes(value)) {
       setInputValue(value); 
     } else {
-      if (["+"].includes(value)) {
-        if (inputValue && !["+"].includes(inputValue.slice(-1))) {
+      if (["+","-"].includes(value)) {
+        if (inputValue && !["+","-"].includes(inputValue.slice(-1))) {
           setInputValue((prevInput) => prevInput + value);
         }
       } else {
