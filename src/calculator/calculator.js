@@ -38,6 +38,7 @@ const CalculatorWithJestTestCases = () => {
           <button data-testid="7" onClick={() => handleCalculations("7")}>7</button>
           <button data-testid="8" onClick={() => handleCalculations("8")}>8</button>
           <button data-testid="9" onClick={() => handleCalculations("9")}>9</button>
+          <button data-testid="-" onClick={() => handleCalculations("-")}>-</button>
           <button data-testid="4" onClick={() => handleCalculations("4")}>4</button>
           <button data-testid="5" onClick={() => handleCalculations("5")}>5</button>
           <button data-testid="6" onClick={() => handleCalculations("6")}>6</button>
