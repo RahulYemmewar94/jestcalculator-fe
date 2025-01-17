@@ -5,7 +5,28 @@ const CalculatorWithJestTestCases = () => {
 
   const handleCalculations = (value) => {
    console.log('value', value);
-   
+   if (value === "=") {
+    try {
+      const result = new Function(`return ${inputValue}`)();
+      setInputValue(result.toString());
+    } catch (error) {
+      setInputValue("Enter the number");
+    }
+  } else if (value === "C") {
+    setInputValue(""); 
+  } else {
+    if (inputValue === "Enter the number" && !["+"].includes(value)) {
+      setInputValue(value); 
+    } else {
+      if (["+"].includes(value)) {
+        if (inputValue && !["+"].includes(inputValue.slice(-1))) {
+          setInputValue((prevInput) => prevInput + value);
+        }
+      } else {
+        setInputValue((prevInput) => prevInput + value);
+      }
+    }
+  }
   };
   
 
