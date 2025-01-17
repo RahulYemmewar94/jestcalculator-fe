@@ -19,14 +19,23 @@ describe("Calculator Test Cases", () => {
     test("Subtraction", async () => {
         render(<CalculatorWithJestTestCases />);
         
-        fireEvent.click(screen.getByText("2"));
-        fireEvent.click(screen.getByText("1"));
+        fireEvent.click(screen.getByText("8"));
         fireEvent.click(screen.getByText("-"));
         fireEvent.click(screen.getByText("2"));
-        fireEvent.click(screen.getByText("0"));
         fireEvent.click(screen.getByText("="));
         
         const result = await screen.findByTestId("result"); 
-        expect(result).toHaveTextContent("1"); 
+        expect(result).toHaveTextContent("6");  
+      });
+      test("Multiplication", async () => {
+        render(<CalculatorWithJestTestCases />);
+        
+        fireEvent.click(screen.getByText("8"));
+        fireEvent.click(screen.getByText("*"));
+        fireEvent.click(screen.getByText("2"));
+        fireEvent.click(screen.getByText("="));
+        
+        const result = await screen.findByTestId("result"); 
+        expect(result).toHaveTextContent("16");  
       });
   });
